@@ -1,5 +1,5 @@
 #!/bin/bash
-# Simple GCP post-install script to set hostname and FQDN
+# Simple GCP post-install script
 
 [ -f /root/.post-install.sh.flag ] && echo "postinstall already run" && exit 0
 
