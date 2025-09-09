@@ -2,10 +2,12 @@
 variable "image_family" {
   description = "The image family to use for the VM boot disk."
   type        = string
+  default     = "rocky-linux-8"  # Example default value
 }
-variable "project_id" {
+
+variable "gcp_project_id" {
   type        = string
-  description = "Your GCP project ID."
+  description = "GCP project ID where resources are deployed."
 }
 
 variable "region" {
@@ -32,4 +34,19 @@ variable "machine_type" {
   default     = "e2-micro"
 }
 
+variable "image_project_id" {
+  description = "GCP project ID for public image lookup."
+  type        = string
+  default     = "rocky-linux-cloud"  # Example default value
+}
 
+variable "network" {
+  description = "The self_link of the VPC network to attach the VM to."
+  type        = string
+  
+}
+
+variable "subnetwork" {
+  description = "The self_link of the subnetwork to attach the VM to."
+  type        = string
+}

@@ -5,5 +5,7 @@ module "vm" {
   machine_type  = var.machine_type
   os_family     = var.image_family
   zone          = var.zone
-  project_id    = var.project_id
+  image_project_id = var.image_project_id
+  network       = var.network
+  subnetwork = var.subnetwork
 }

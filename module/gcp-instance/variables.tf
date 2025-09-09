@@ -1,9 +1,13 @@
+variable "network" {
+  description = "The self_link of the VPC network to attach the VM to."
+  type        = string
+}
 variable "os_family" {
   description = "The OS image family to use for the VM boot disk"
   type        = string
 }
-variable "project_id" {
-  description = "GCP project ID for image lookup."
+variable "image_project_id" {
+  description = "GCP project ID for public image lookup (e.g., debian-cloud)."
   type        = string
 }
 variable "instance_name" {
@@ -21,4 +25,9 @@ variable "machine_type" {
 variable "zone" {
   type        = string
   description = "GCP zone"
+}
+
+variable "subnetwork" {
+  description = "The self_link of the subnetwork to attach the VM to."
+  type        = string
 }

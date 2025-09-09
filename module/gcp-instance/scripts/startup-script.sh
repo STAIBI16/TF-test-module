@@ -12,4 +12,3 @@ echo "$HOSTNAME" >/etc/hostname
 hostname "$HOSTNAME"
 hostnamectl set-hostname "$HOSTNAME"
 
-

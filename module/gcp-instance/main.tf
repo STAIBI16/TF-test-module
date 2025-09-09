@@ -1,6 +1,6 @@
 data "google_compute_image" "default" {
-  family  = var.os_family 
-  project = var.project_id
+  family  = var.os_family
+  project = var.image_project_id
 }
 
 resource "google_compute_instance" "vm" {
@@ -15,11 +15,13 @@ resource "google_compute_instance" "vm" {
   }
 
   network_interface {
-    network = "default"
-    access_config {} 
+    network    = var.network
+    subnetwork = var.subnetwork
   }
 
-  metadata_startup_script = file("${path.module}/scripts/startup-script.sh")
+  metadata = {
+    startup-script = file("${path.module}/scripts/startup-script.sh")
+  }
 
   service_account {
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]

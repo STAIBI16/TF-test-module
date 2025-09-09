@@ -1,8 +1,10 @@
 
-image_family = "image-family"
-project_id = "your-project-id"
-region = "region"
-zone = "zone"
-instance_name = "instance-name"
-machine_type = "machine-type"
-
+image_family     = "your-image-family"
+image_project_id = "your-image-project-id"
+region           = "gcp_region"
+zone             = "gcp_zone"
+instance_name    = "your_instance_name"
+machine_type     = "your_machine_type"
+gcp_project_id   = "your_gcp_project_id"
+network          = "your_vpc_network"
+subnetwork       = "your_subnetwork"
